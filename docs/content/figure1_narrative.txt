@@ -1,0 +1,39 @@
+# Figure 1 Sidebar: Technical Specifications
+
+**Project:** Analysis: Cerro Dúrika Mass Wasting Event  
+**Location:** Talamanca Range, PILA, Costa Rica  
+**Coordinates:** Lat 9.3762° Lon -83.3009°  
+
+**Personnel:**
+* **Analyst:** Arturo Martín-de-Nicolás (Alumni BSEE/BACS Rice University)
+* **Coordination:** Geógrafo José Rivas (Espacio Geográfico, Facebook)
+* **Research Associate:** Gemini (AI Model) - Data Synthesis & Structural Modeling
+
+### CHRONOLOGY
+* **Dec 2015:** Baseline imagery (Fig 2) shows incipient ~200m "V" surface scoring; primary slope remains intact.
+* **Apr 2025:** Satellite/Aerial imagery (Fig 1) captures the 220m vertical collapse; event occurs prior to this timestamp.
+* **Dec 2025:** Ground-level summiting (J. Salas) via southern/eastern approach; failure remains hidden by northern topography.
+* **Mar 2026:** Discovery via remote sensing (A. Martín-de-Nicolás); subsequent drone validation (J. Salas) confirms "ground truth."
+
+### DATA PROVENANCE
+* **Topography:** 1:50,000 IDECORI Isohypses (SNIT Geoportal)
+* **Imagery:** Google Maps/SNIT (April 2025) verified against multi-temporal Google Earth Pro archives (Fig 2)
+* **Orientation:** 180° Rotation (Gravity-Aligned / Slope-Down View)
+* **Validation:** 2026 Drone Reconnaissance (Johel Salas)
+
+### TOPOGRAPHIC BASELINE
+* **Source:** 1:50,000 IDECORI Isohypses (SNIT Geoportal)
+* **Interval:** 10 meters (Major index at 100m)
+* **Status:** Pre-Event Photogrammetric Surface
+* **Visualization:** Contours rendered in RED over the failure zone to illustrate the divergence between the historical stable slope and current satellite-observed morphology.
+
+### OBSERVATIONS
+* **Headscarp:** Massive structural failure initiating at the ~3,120m contour.
+* **Displacement:** Approximately 220m vertical wedge collapse (from 3,120m to 2,900m base) channelizing into the headwaters of the Río Dúrika.
+* **Secondary Event:** Reactive bank failure observed downstream, likely triggered by lateral erosion from primary debris pulse (Fig 3).
+
+### FUTURE RESEARCH
+* Volumetric quantification via Structure from Motion (SfM) utilizing recent 4K drone assets.
+
+### LICENSE & ATTRIBUTION
+Released under **CC BY 4.0**. Permission is granted for academic/research use with proper attribution to: Arturo Martín-de-Nicolás (Analyst), Geógrafo José Rivas (Espacio Geográfico, Facebook), and Research Associate: Gemini (AI Model).
