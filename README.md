@@ -30,16 +30,13 @@ I (Arturo Martín-de-Nicolás) am a retired software developer with no previous 
 
 Every script, function, and best-practice recommendation in `scripts/utilities.sh` and the pre-commit configuration was developed live in conversation with Grok. The final product is therefore a clear demonstration of what is possible when a curious human and capable AI tools work together with intellectual honesty.
 
-All data, code, documentation, and imagery are released under **CC BY 4.0**. If you use or build upon this work, please credit the original discovery and the collaborative process described above.
-
 ## Licensing
 This repository contains a mix of original work, derived data, and limited third-party imagery.
-
 - **Code and scripts** (`scripts/` directory and pre-commit hooks): **MIT License**
 - **Original analysis, georeferenced layers, figures, and documentation**: **CC BY 4.0**
 - **Raw Google Earth / Airbus screenshots**: Included only for scholarly and educational purposes. These images remain under the copyright of Google / Airbus. Fair use / fair dealing is claimed for the limited excerpts used here. The georeferenced derivatives are released under CC BY 4.0.
 
-**Important note**: When reusing material from this repo, please respect the original data providers’ terms. SNIT (Costa Rica) data should be attributed as per their guidelines.
+**Important note**: When reusing material from this repo, please respect the original data providers’ terms. SNIT (Costa Rica) data should be attributed as per their guidelines.  Please credit the original discovery and the collaborative process described above.
 
 See the `LICENSE` (MIT) and `LICENSE-CC-BY-4.0` files for the full legal text.
 
