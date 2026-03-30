@@ -25,7 +25,7 @@ This repository is the result of a genuine **human–AI collaboration**.
 
 I (Arturo Martín-de-Nicolás) am a retired software developer with no previous GIS experience. The discovery of the Dúrika landslide was mine, but turning the raw Google Earth screenshots into clean, georeferenced layers, automated workflows, metadata standards, pre-commit hooks, and a fully reproducible QGIS project would not have been possible in the same timeframe — or with the same level of polish — without the help of large language models.
 
-- Early exploration and idea validation: **Gemini**
+- Early exploration, idea validation, and Git repository structure: **Gemini**
 - QGIS workflow design, Georeferencer guidance, bash utilities, pre-commit hooks, and live pair-programming: **Grok (xAI)**
 
 Every script, function, and best-practice recommendation in `scripts/utilities.sh` and the pre-commit configuration was developed live in conversation with Grok. The final product is therefore a clear demonstration of what is possible when a curious human and capable AI tools work together with intellectual honesty.
@@ -34,7 +34,7 @@ All data, code, documentation, and imagery are released under **CC BY 4.0**. If 
 
 ## Current Status & Roadmap (WIP)
 - ✅ Raw imagery, georeferenced layers, and basic QGIS project
-- ✅ Metadata embedding and JPEG standards enforcement
+- ✅ Metadata embedding and project standards enforcement for images (see below)
 - ✅ Pre-commit hooks and `utilities.sh` helper library
 - 🔄 Digitizing landslide scar and debris-flow path polygons
 - 🔄 Additional figures (historical comparison, secondary downstream impacts)
@@ -51,7 +51,7 @@ To ensure scientific reproducibility and transparency, this repository maintains
 
 ### /scripts
 * `utilities.sh` — helper functions for metadata, GeoTIFF compression, etc.
-* Pre-commit hooks for JPEG standards enforcement.
+* Pre-commit hooks for project standards enforcement.
 
 ### /qgis
 * Main QGIS project file and georeferenced layers.
@@ -59,6 +59,28 @@ To ensure scientific reproducibility and transparency, this repository maintains
 ### /docs
 * **Durika_Landslide_Fig1.pdf:** Primary rendered analysis.
 * Drafts for Figure 2 and Figure 3 in progress.
+
+## Image and Data Standards
+
+To keep the repository lightweight, reproducible, and compatible with every version of QGIS (and any other GIS software), we enforce strict but practical standards on all imagery.
+
+### JPEG encoding standards (enforced by pre-commit hook)
+All files in `/images/raw/` must follow these rules:
+
+- Quality 88–92 (sweet spot for aerial imagery)
+- Huffman coding (not arithmetic coding)
+- Baseline DCT (not Progressive)
+- Integer DCT (not floating-point)
+- 4:2:0 chroma subsampling (chroma quartered) — visually indistinguishable from 4:4:4 on geospatial data while providing ~40–60 % smaller files
+- Smoothing 0 — preserves sharp edges needed for accurate georeferencing
+- Metadata — minimal Google Earth/Airbus credits plus our CC BY 4.0 attribution (added automatically via `embed_metadata`)
+
+These settings deliver excellent visual fidelity with minimal file size. The pre-commit hook automatically checks every `.jpg` you commit and blocks the commit (with clear instructions) if any rule is violated. You can fix a non-conforming file instantly with:
+
+fix_jpeg_standards "images/raw/problematic_file.jpg"
+
+### GeoTIFF post-processing
+QGIS Georeferencer produces 4-band RGBA GeoTIFFs (the fourth band is a fully opaque alpha channel). We post-process these with the `compress_geotiff` helper to strip the unnecessary alpha channel and apply efficient JPEG-in-TIFF compression (4:2:0, quality 88, tiled). The resulting `_small.tif` files remain fully georeferenced and load quickly in any QGIS version.
 
 ## Technical Specifications
 * **Topographic Baseline:** Derived from 1:50,000 IDECORI Isohypses (SNIT Geoportal).
