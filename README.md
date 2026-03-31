@@ -91,6 +91,7 @@ fix_jpeg_standards "images/raw/problematic_file.jpg"
 QGIS Georeferencer produces 4-band RGBA GeoTIFFs (the fourth band is a fully opaque alpha channel). We post-process these with the `compress_geotiff` helper to strip the unnecessary alpha channel and apply efficient JPEG-in-TIFF compression (4:2:0, quality 88, tiled). The resulting `_small.tif` files remain fully georeferenced and load quickly in any QGIS version.
 
 ## Technical Specifications
+* **Coordinate Reference System (CRS):** All georeferencing and project work performed with **Project CRS = EPSG:5367** (CRTM05 / Costa Rica Transverse Mercator 2005), Costa Rica’s official projected coordinate system. All output GeoTIFFs are natively in this CRS.
 * **Topographic Baseline:** Derived from 1:50,000 IDECORI Isohypses (SNIT Geoportal).
 * **Visualization:** Contours rendered in **RED** over the failure zone illustrate the divergence between the historical stable slope and current observed morphology.
 
